@@ -126,11 +126,15 @@ namespace DSA.LinkedList.SLL
             SingleNode<T> tempNode = Head;
             for (int i = 0; i < Size; i++)
             {
-                Console.WriteLine($"{tempNode.Value}");
+                Console.Write($"{tempNode.Value}");
                 tempNode = tempNode.Next;
+                if(i < Size - 1)
+                {
+                    Console.Write(" -> ");
+                }
             }
 
-            Console.WriteLine($"Size of the linked list is: {Size}");
+            Console.WriteLine($"\nSize of the linked list is: {Size}");
         }
     }
 }
