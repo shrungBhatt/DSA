@@ -136,5 +136,19 @@ namespace DSA.LinkedList.SLL
 
             Console.WriteLine($"\nSize of the linked list is: {Size}");
         }
+
+        public SingleNode<T> SearchNode(T value)
+        {
+            SingleNode<T> tempNode = Head;
+            for(int i = 0; i < Size; i++)
+            {
+                if (EqualityComparer<T>.Default.Equals(tempNode.Value, value))
+                {
+                    return tempNode;
+                }
+                tempNode = tempNode.Next;
+            }
+            return null;
+        } 
     }
 }

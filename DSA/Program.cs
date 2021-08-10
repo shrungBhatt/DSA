@@ -21,6 +21,10 @@ namespace DSA
             sll.AddAfter(secondNode, 29);
 
             sll.TraverseLinkedList();
+
+            var node = sll.SearchNode(29);
+
+            Console.WriteLine($"{node.GetHashCode()}");
         }
     }
 }
