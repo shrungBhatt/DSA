@@ -22,9 +22,17 @@ namespace DSA
 
             sll.TraverseLinkedList();
 
-            var node = sll.SearchNode(29);
+            var node = sll.SearchNode(23);
 
-            Console.WriteLine($"{node.GetHashCode()}");
+            if(node != null)
+            {
+                Console.WriteLine($"{node.GetHashCode()}");
+            }
+            else
+            {
+                Console.WriteLine($"Node not found");
+            }
+            
         }
     }
 }

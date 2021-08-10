@@ -139,6 +139,11 @@ namespace DSA.LinkedList.SLL
 
         public SingleNode<T> SearchNode(T value)
         {
+            if (!linkedListExists)
+            {
+                return null;
+            }
+
             SingleNode<T> tempNode = Head;
             for(int i = 0; i < Size; i++)
             {
@@ -150,5 +155,10 @@ namespace DSA.LinkedList.SLL
             }
             return null;
         } 
+
+        public void DeleteNode(T value)
+        {
+
+        }
     }
 }
