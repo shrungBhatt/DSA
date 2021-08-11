@@ -12,17 +12,21 @@ namespace DSA
             var secondNode = sll.AddLast(20);
             var thirdNode = sll.AddLast(30);
 
-            sll.AddAfter(firstNode, 15);
-
             sll.AddFirst(5);
 
             sll.AddAfter(thirdNode, 35);
 
             sll.AddAfter(secondNode, 29);
 
+            //sll.DeleteNode(29);
+
+            //sll.DeleteNode(5);
+
+            //sll.DeleteNode(35);
+            
             sll.TraverseLinkedList();
 
-            var node = sll.SearchNode(23);
+            var node = sll.SearchNode(29);
 
             if(node != null)
             {

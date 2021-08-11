@@ -158,7 +158,38 @@ namespace DSA.LinkedList.SLL
 
         public void DeleteNode(T value)
         {
+            if (!linkedListExists)
+            {
+                return;
+            }
 
+            var tempNode = Head;
+            SingleNode<T> cachedNode = null;
+            for(int i = 0; i < Size; i++)
+            {
+                if(EqualityComparer<T>.Default.Equals(tempNode.Value, value))
+                {
+                    if(tempNode.GetHashCode() == Head.GetHashCode())
+                    {
+                        Head = tempNode.Next;
+                        break;
+                    }
+                    else if(tempNode.GetHashCode() == Tail.GetHashCode())
+                    {                        
+                        Tail = cachedNode;
+                        Tail.Next = null;
+                    }
+                    else
+                    {
+                        cachedNode.Next = tempNode.Next;
+                        break;
+                    }
+                }
+                cachedNode = tempNode;
+                tempNode = tempNode.Next;
+            }
+
+            Size -= 1;
         }
     }
 }
