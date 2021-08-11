@@ -172,24 +172,27 @@ namespace DSA.LinkedList.SLL
                     if(tempNode.GetHashCode() == Head.GetHashCode())
                     {
                         Head = tempNode.Next;
+                        Size -= 1;
                         break;
                     }
                     else if(tempNode.GetHashCode() == Tail.GetHashCode())
                     {                        
                         Tail = cachedNode;
                         Tail.Next = null;
+                        Size -= 1;
+                        break;
+                        
                     }
                     else
                     {
                         cachedNode.Next = tempNode.Next;
+                        Size -= 1;
                         break;
                     }
                 }
                 cachedNode = tempNode;
                 tempNode = tempNode.Next;
             }
-
-            Size -= 1;
         }
     }
 }

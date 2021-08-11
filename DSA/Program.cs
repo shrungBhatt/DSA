@@ -23,6 +23,8 @@ namespace DSA
             //sll.DeleteNode(5);
 
             //sll.DeleteNode(35);
+
+            //sll.DeleteNode(50);
             
             sll.TraverseLinkedList();
 
