@@ -1,79 +1,83 @@
-﻿using System;
+﻿using DSA.LinkedList.SLL;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace DSA.LinkedList.SLL
+namespace DSA.LinkedList.CSLL
 {
-    public class SingleLinkedList<T>
+    public class CircularSingleLinkedList<T>
     {
         public SingleNode<T> Head { get; set; }
         public SingleNode<T> Tail { get; set; }
         public int Size { get; set; }
-        bool linkedListExists { get => Head != null; }
+        public bool circularSingleLinkedListsExists { get => Head != null; }
 
-        public SingleNode<T> CreateSingleLinkedList(T value)
+
+        public void CreateCircularSingleLinkedList(T value)
         {
-            //Create empty single node
-            var node = new SingleNode<T>();
+            var node = new SingleNode<T> { Value = value };
 
-            //Assign the value to the node
-            node.Value = value;
-
-            //Set the Head and Tail as current node
+            //Set this new node as head and as the next node of the head
+            node.Next = node;
             Head = node;
-            Head.Next = node;
 
+            //Set this new node as tail and as the next node of the tail
             Tail = node;
-            Tail.Next = node;
-
-            //Set the size of the list to 1
             Size = 1;
-
-            return node;
         }
 
         public SingleNode<T> AddFirst(T value)
         {
-            //Return null if no linked list exists
-            if (!linkedListExists)
+            if (!circularSingleLinkedListsExists)
             {
                 return null;
             }
-
-            //Create the new node and assign the value
+            //Create the new node
             var newNode = new SingleNode<T> { Value = value };
 
-            //Assign the next of head to the next of new node
+            //Make the new node next reference as the head
             newNode.Next = Head;
 
-            //Assign the next of head as new node
+            //Make the new node the head node
             Head = newNode;
 
-            //Increment the size by 1
+            //Make the next node of Tail the new node
+            Tail.Next = newNode;
+
             Size += 1;
 
-            //Return the newly created node
             return newNode;
         }
 
         public SingleNode<T> AddLast(T value)
         {
-            if (!linkedListExists)
+            if (!circularSingleLinkedListsExists)
             {
                 return null;
             }
 
+            //Create the new node
             var newNode = new SingleNode<T> { Value = value };
-            newNode.Next = null;
+
+            //Assign the next of new node as next node of the tail
+            newNode.Next = Tail.Next;
+
+            //Set the next reference of tail as the reference of new node
             Tail.Next = newNode;
+
+            //Set the new node as the latest tail
             Tail = newNode;
+
+            //Increment the size of the list by 1
             Size += 1;
+
             return newNode;
         }
 
+
         public SingleNode<T> AddAfter(SingleNode<T> afterNode, T value)
         {
-            if (!linkedListExists)
+            if (!circularSingleLinkedListsExists)
             {
                 return null;
             }
@@ -116,72 +120,56 @@ namespace DSA.LinkedList.SLL
             return newNode;
         }
 
-        public void TraverseLinkedList()
-        {
-            if (!linkedListExists)
-            {
-                return;
-            }
-
-            SingleNode<T> tempNode = Head;
-            for (int i = 0; i < Size; i++)
-            {
-                Console.Write($"{tempNode.Value}");
-                tempNode = tempNode.Next;
-                if(i < Size - 1)
-                {
-                    Console.Write(" -> ");
-                }
-            }
-
-            Console.WriteLine($"\nSize of the linked list is: {Size}");
-        }
-
         public SingleNode<T> SearchNode(T value)
         {
-            if (!linkedListExists)
+            if (!circularSingleLinkedListsExists)
             {
                 return null;
             }
 
             SingleNode<T> tempNode = Head;
-            for(int i = 0; i < Size; i++)
+            while (true)
             {
                 if (EqualityComparer<T>.Default.Equals(tempNode.Value, value))
                 {
                     return tempNode;
                 }
                 tempNode = tempNode.Next;
+
+                if(tempNode.GetHashCode() == Head.GetHashCode())
+                {
+                    return null;
+                }
             }
-            return null;
-        } 
+        }
 
         public void DeleteNode(T value)
         {
-            if (!linkedListExists)
+            if (!circularSingleLinkedListsExists)
             {
                 return;
             }
 
             var tempNode = Head;
             SingleNode<T> cachedNode = null;
-            for(int i = 0; i < Size; i++)
+            for (int i = 0; i < Size; i++)
             {
-                if(EqualityComparer<T>.Default.Equals(tempNode.Value, value))
+                if (EqualityComparer<T>.Default.Equals(tempNode.Value, value))
                 {
-                    if(tempNode.GetHashCode() == Head.GetHashCode())
+                    if (tempNode.GetHashCode() == Head.GetHashCode())
                     {
                         Head = tempNode.Next;
+                        Tail.Next = Head;
                         Size -= 1;
                         break;
                     }
-                    else if(tempNode.GetHashCode() == Tail.GetHashCode())
-                    {                        
+                    else if (tempNode.GetHashCode() == Tail.GetHashCode())
+                    {
                         Tail = cachedNode;
-                        Tail.Next = null;
+                        Tail.Next = Head;
                         Size -= 1;
                         break;
-                        
+
                     }
                     else
                     {
@@ -194,5 +182,20 @@ namespace DSA.LinkedList.SLL
                 tempNode = tempNode.Next;
             }
         }
+
+        public void TraverseList()
+        {
+            var node = Head;
+            while (true)
+            {
+                Console.Write($"{node.Value}");
+                if (node.GetHashCode() == Tail.GetHashCode())
+                    break;
+                else
+                    Console.Write(" -> ");
+                node = node.Next;
+            }
+        }
+
     }
 }

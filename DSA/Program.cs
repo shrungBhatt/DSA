@@ -1,4 +1,5 @@
-﻿using DSA.LinkedList.SLL;
+﻿using DSA.LinkedList.CSLL;
+using DSA.LinkedList.SLL;
 using System;
 
 namespace DSA
@@ -7,38 +8,64 @@ namespace DSA
     {
         static void Main(string[] args)
         {
-            var sll = new SingleLinkedList<int>();
-            var firstNode = sll.CreateSingleLinkedList(10);
-            var secondNode = sll.AddLast(20);
-            var thirdNode = sll.AddLast(30);
+            #region SLL
+            //var sll = new SingleLinkedList<int>();
+            //var firstNode = sll.CreateSingleLinkedList(10);
+            //var secondNode = sll.AddLast(20);
+            //var thirdNode = sll.AddLast(30);
 
-            sll.AddFirst(5);
+            //sll.AddFirst(5);
 
-            sll.AddAfter(thirdNode, 35);
+            //sll.AddAfter(thirdNode, 35);
 
-            sll.AddAfter(secondNode, 29);
+            //sll.AddAfter(secondNode, 29);
 
-            //sll.DeleteNode(29);
+            ////sll.DeleteNode(29);
 
-            //sll.DeleteNode(5);
+            ////sll.DeleteNode(5);
 
-            //sll.DeleteNode(35);
+            ////sll.DeleteNode(35);
 
-            //sll.DeleteNode(50);
-            
-            sll.TraverseLinkedList();
+            ////sll.DeleteNode(50);
 
-            var node = sll.SearchNode(29);
+            //sll.TraverseLinkedList();
 
-            if(node != null)
-            {
-                Console.WriteLine($"{node.GetHashCode()}");
-            }
-            else
-            {
-                Console.WriteLine($"Node not found");
-            }
-            
+            //var node = sll.SearchNode(29);
+
+            //if(node != null)
+            //{
+            //    Console.WriteLine($"{node.GetHashCode()}");
+            //}
+            //else
+            //{
+            //    Console.WriteLine($"Node not found");
+            //}
+            #endregion
+
+            #region CSLL
+            var csll = new CircularSingleLinkedList<int>();
+            csll.CreateCircularSingleLinkedList(10);
+
+            csll.AddFirst(5);
+            csll.AddFirst(1);
+            csll.AddFirst(0);
+
+            var node1 =  csll.AddLast(15);
+            csll.AddLast(20);
+
+            csll.AddAfter(node1, 18);
+
+            var searchNode = csll.SearchNode(15);
+
+            csll.DeleteNode(0);
+            //csll.DeleteNode()
+            csll.DeleteNode(20);
+            //csll.DeleteNode(18);
+
+            csll.TraverseList();
+
+            #endregion
+
         }
     }
 }
