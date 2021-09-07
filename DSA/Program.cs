@@ -69,40 +69,40 @@ namespace DSA
             #endregion
 
             #region Binary Tree Linked List
-            var binaryTree = new BinaryTreeByLinkedList<int>();
-            binaryTree.InsertNode(20);
-            binaryTree.InsertNode(100);
-            binaryTree.InsertNode(3);
-            binaryTree.InsertNode(50);
-            binaryTree.InsertNode(15);
-            binaryTree.InsertNode(250);
-            binaryTree.InsertNode(35);
-            binaryTree.InsertNode(222);
+            //var binaryTree = new BinaryTreeByLinkedList<int>();
+            //binaryTree.InsertNode(20);
+            //binaryTree.InsertNode(100);
+            //binaryTree.InsertNode(3);
+            //binaryTree.InsertNode(50);
+            //binaryTree.InsertNode(15);
+            //binaryTree.InsertNode(250);
+            //binaryTree.InsertNode(35);
+            //binaryTree.InsertNode(222);
 
-            binaryTree.PreOrderTraversal(binaryTree.Root);
+            //binaryTree.PreOrderTraversal(binaryTree.Root);
 
-            Console.WriteLine();
+            //Console.WriteLine();
 
-            binaryTree.InOrderTraversal(binaryTree.Root);
+            //binaryTree.InOrderTraversal(binaryTree.Root);
 
-            Console.WriteLine();
+            //Console.WriteLine();
 
-            binaryTree.PostOrderTravesal(binaryTree.Root);
+            //binaryTree.PostOrderTravesal(binaryTree.Root);
 
-            Console.WriteLine();
+            //Console.WriteLine();
 
-            binaryTree.LevelOrderTraversal(binaryTree.Root);
+            //binaryTree.LevelOrderTraversal(binaryTree.Root);
 
-            Console.WriteLine();
+            //Console.WriteLine();
 
-            var searchNode = binaryTree.SearchNode(15);
-            Console.WriteLine(searchNode.Value);
+            //var searchNode = binaryTree.SearchNode(15);
+            //Console.WriteLine(searchNode.Value);
 
-            Console.WriteLine();
+            //Console.WriteLine();
 
-            binaryTree.DeleteNode(3);
+            //binaryTree.DeleteNode(3);
 
-            binaryTree.LevelOrderTraversal(binaryTree.Root);
+            //binaryTree.LevelOrderTraversal(binaryTree.Root);
 
 
             #endregion

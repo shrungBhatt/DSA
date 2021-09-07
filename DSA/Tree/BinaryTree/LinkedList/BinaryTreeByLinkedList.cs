@@ -6,7 +6,7 @@ namespace DSA.Tree.BinaryTree.LinkedList
 {
     public class BinaryTreeByLinkedList<T>
     {
-        public BinaryNode<T> Root { get; set; }
+        public TreeNode<T> Root { get; set; }
 
         public BinaryTreeByLinkedList()
         {
@@ -14,7 +14,7 @@ namespace DSA.Tree.BinaryTree.LinkedList
         }
 
         //Pre-order traversal
-        public void PreOrderTraversal(BinaryNode<T> root)
+        public void PreOrderTraversal(TreeNode<T> root)
         {
             if (root == null)
             {
@@ -29,7 +29,7 @@ namespace DSA.Tree.BinaryTree.LinkedList
         }
 
         //In-order traversal
-        public void InOrderTraversal(BinaryNode<T> root)
+        public void InOrderTraversal(TreeNode<T> root)
         {
             if (root == null)
             {
@@ -44,7 +44,7 @@ namespace DSA.Tree.BinaryTree.LinkedList
         }
 
         //Post-order traversal
-        public void PostOrderTravesal(BinaryNode<T> root)
+        public void PostOrderTravesal(TreeNode<T> root)
         {
             if (root == null)
             {
@@ -59,14 +59,14 @@ namespace DSA.Tree.BinaryTree.LinkedList
         }
 
         //Level-order traversal
-        public void LevelOrderTraversal(BinaryNode<T> root)
+        public void LevelOrderTraversal(TreeNode<T> root)
         {
             if (root == null)
             {
                 return;
             }
 
-            Queue<BinaryNode<T>> nodes = new Queue<BinaryNode<T>>();
+            Queue<TreeNode<T>> nodes = new Queue<TreeNode<T>>();
             nodes.Enqueue(root);
             while (nodes.Count != 0)
             {
@@ -84,14 +84,14 @@ namespace DSA.Tree.BinaryTree.LinkedList
         }
 
         //Search node
-        public BinaryNode<T> SearchNode(T value)
+        public TreeNode<T> SearchNode(T value)
         {
             if (Root == null)
             {
                 throw new Exception("The root cannot be empty");
             }
 
-            Queue<BinaryNode<T>> nodes = new Queue<BinaryNode<T>>();
+            Queue<TreeNode<T>> nodes = new Queue<TreeNode<T>>();
             nodes.Enqueue(Root);
             while (nodes.Count != 0)
             {
@@ -114,9 +114,9 @@ namespace DSA.Tree.BinaryTree.LinkedList
         }
 
         //Insert node
-        public BinaryNode<T> InsertNode(T value)
+        public TreeNode<T> InsertNode(T value)
         {
-            var newNode = new BinaryNode<T>() { Value = value };
+            var newNode = new TreeNode<T>() { Value = value };
 
             if (Root == null)
             {
@@ -124,7 +124,7 @@ namespace DSA.Tree.BinaryTree.LinkedList
                 return Root;
             }
 
-            var queue = new Queue<BinaryNode<T>>();
+            var queue = new Queue<TreeNode<T>>();
             queue.Enqueue(Root);
             while (queue.Count != 0)
             {
@@ -157,7 +157,7 @@ namespace DSA.Tree.BinaryTree.LinkedList
                 throw new Exception("The tree is not initialized or does not contain any nodes");
             }
 
-            var queue = new Queue<BinaryNode<T>>();
+            var queue = new Queue<TreeNode<T>>();
             queue.Enqueue(Root);
             while (queue.Count != 0)
             {
@@ -188,15 +188,15 @@ namespace DSA.Tree.BinaryTree.LinkedList
         }
 
         //Get deepest node
-        BinaryNode<T> GetDeepestNode()
+        TreeNode<T> GetDeepestNode()
         {
             if (Root == null)
             {
                 throw new Exception("The tree is not initialized or does not contain any nodes");
             }
-            var queue = new Queue<BinaryNode<T>>();
+            var queue = new Queue<TreeNode<T>>();
             queue.Enqueue(Root);
-            BinaryNode<T> deepestNode = null;
+            TreeNode<T> deepestNode = null;
             while (queue.Count != 0)
             {
                 deepestNode = queue.Dequeue();
@@ -210,14 +210,14 @@ namespace DSA.Tree.BinaryTree.LinkedList
         }
 
         //Delete deepest node
-        void DeleteDeepestNode(BinaryNode<T> deepestNode)
+        void DeleteDeepestNode(TreeNode<T> deepestNode)
         {
             if (Root == null)
             {
                 throw new Exception("The tree is not initialized or does not contain any nodes");
             }
 
-            var queue = new Queue<BinaryNode<T>>();
+            var queue = new Queue<TreeNode<T>>();
             queue.Enqueue(Root);
 
             while (queue.Count != 0)
