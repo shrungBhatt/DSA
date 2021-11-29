@@ -110,36 +110,37 @@ namespace DSA
 
             #region Binary Search Tree
 
-            var bst = new BinarySearchTree();
-            bst.CreateBST(100);
-            bst.InsertNode(80);
-            bst.InsertNode(200);
-            bst.InsertNode(300);
-            bst.InsertNode(150);
-            bst.InsertNode(90);
-            bst.InsertNode(70);
-            bst.InsertNode(400);
-            bst.InsertNode(250);
-            bst.InsertNode(50);
-            bst.InsertNode(40);
-            bst.InsertNode(60);
+            //var bst = new BinarySearchTree();
+            //bst.CreateBST(100);
+            //bst.InsertNode(80);
+            //bst.InsertNode(200);
+            //bst.InsertNode(300);
+            //bst.InsertNode(150);
+            //bst.InsertNode(90);
+            //bst.InsertNode(70);
+            //bst.InsertNode(400);
+            //bst.InsertNode(250);
+            //bst.InsertNode(50);
+            //bst.InsertNode(40);
+            //bst.InsertNode(60);
 
-            bst.LevelOrderTraversal(bst.Root);
+            //bst.LevelOrderTraversal(bst.Root);
 
-            bst.DeleteNode(200);
+            //bst.DeleteNode(200);
 
-            Console.WriteLine();
-            bst.LevelOrderTraversal(bst.Root);
+            //Console.WriteLine();
+            //bst.LevelOrderTraversal(bst.Root);
 
-            bst.DeleteNode(60);
+            //bst.DeleteNode(60);
 
-            Console.WriteLine();
-            bst.LevelOrderTraversal(bst.Root);
+            //Console.WriteLine();
+            //bst.LevelOrderTraversal(bst.Root);
 
-            bst.DeleteNode(70);
+            //bst.DeleteNode(70);
 
-            Console.WriteLine();
-            bst.LevelOrderTraversal(bst.Root);
+            //Console.WriteLine();
+            //bst.LevelOrderTraversal(bst.Root);
+
 
             #endregion
         }

@@ -94,7 +94,7 @@ namespace DSA.Tree
                     var temp = node;
                     var minNodeForRightSubTree = GetMinimumNode(temp.Right);//Find successor from right sub tree
                     node.Value = minNodeForRightSubTree.Value;//Replace the current node value with successors
-                    node.Right = DeleteNode(node.Right, node.Value);//Delete the successor
+                    node.Right = DeleteNode(node.Right, temp.Value);//Delete the successor
                 }
                 else if (node.Left != null)//The node has only left child
                 {
