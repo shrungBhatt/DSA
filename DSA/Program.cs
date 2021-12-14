@@ -1,5 +1,7 @@
 ﻿using DSA.LinkedList.CSLL;
 using DSA.LinkedList.SLL;
+using DSA.Practice.ArrayStrings;
+using DSA.Practice.LinkedList;
 using DSA.Tree;
 using DSA.Tree.BinaryTree.LinkedList;
 using System;
@@ -143,6 +145,53 @@ namespace DSA
 
 
             #endregion
+
+            //IsUnique isUnique = new IsUnique();
+            //Console.WriteLine(isUnique.HasUniqueCharacters("abcd"));
+            //Console.WriteLine(isUnique.HasUniqueCharacters("abcdd"));
+
+
+            //CheckPermutation permutation = new CheckPermutation();
+            //Console.WriteLine(permutation.IsAPermutation("abca  dd", "abd ca d"));
+            //Console.WriteLine(permutation.IsAPermutation("abcd ", "ab cd"));
+
+            //URLify url = new URLify();
+            //Console.WriteLine(url.ConvertUrl("Mr John Smith    ", 13));
+
+            //PalindromePermutation pp = new PalindromePermutation();
+            //Console.WriteLine(pp.IsPalindromePermutation("tacocat"));
+            //Console.WriteLine(pp.IsPalindromePermutation("ar crca a"));
+
+            //StringCompression sc = new StringCompression();
+            //Console.WriteLine(sc.CompressString("aabcccccaaaAbCCZZZ"));
+
+            //RemoveDups rd = new RemoveDups();
+            //LinkedList<int> list = new LinkedList<int>();
+            //list.AddFirst(1);
+            //list.AddLast(2);
+            //list.AddLast(3);
+            //list.AddLast(4);
+            //list.AddLast(5);
+            //list.AddLast(2);
+            //list.AddLast(1);
+
+            //rd.Print(list);
+            //rd.RemoveDupItem(list.First);
+            //Console.WriteLine("");
+            //rd.Print(list);
+
+
+            LinkedList<int> list1 = new LinkedList<int>();
+            list1.AddFirst(1);
+            list1.AddLast(2);
+            list1.AddLast(3);
+            list1.AddLast(4);
+            list1.AddLast(5);
+
+            KthElement ke = new KthElement();
+            Console.WriteLine(ke.KthElementFromLast(list1.First, 6));
+
+
         }
     }
 }
