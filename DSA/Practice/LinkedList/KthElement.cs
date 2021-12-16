@@ -22,7 +22,8 @@ namespace DSA.Practice.LinkedList
                 stack.Pop();
             }
 
-            return stack.Peek();
+            return stack.Count > 0 ? stack.Peek() : throw new Exception("The stack is empty, the kth value is greater than length of linked list");
+
         }
     }
 }

@@ -183,13 +183,13 @@ namespace DSA
 
             LinkedList<int> list1 = new LinkedList<int>();
             list1.AddFirst(1);
-            list1.AddLast(2);
-            list1.AddLast(3);
-            list1.AddLast(4);
-            list1.AddLast(5);
+            //list1.AddLast(2);
+            //list1.AddLast(3);
+            //list1.AddLast(4);
+            //list1.AddLast(5);
 
             KthElement ke = new KthElement();
-            Console.WriteLine(ke.KthElementFromLast(list1.First, 6));
+            Console.WriteLine(ke.KthElementFromLast(list1.First, 2));
 
 
         }
