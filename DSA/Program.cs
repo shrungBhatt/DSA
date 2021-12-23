@@ -192,46 +192,50 @@ namespace DSA
             //KthElement ke = new KthElement();
             //Console.WriteLine(ke.KthElementFromLast(list1.First, 2));
 
-            var activitySelection = new ActivitySelection();
-            var activities = new List<Activity>
-            {
-                new Activity
-                {
-                    Start = 0,
-                    End = 6
-                },
-                new Activity
-                {
-                    Start = 3,
-                    End = 4
-                },
-                new Activity
-                {
-                    Start = 1,
-                    End = 2
-                },
-                new Activity
-                {
-                    Start = 5,
-                    End = 8
-                },
-                new Activity
-                {
-                    Start = 5,
-                    End = 7
-                },
-                new Activity
-                {
-                    Start = 8,
-                    End = 9
-                }
-            };
+            //var activitySelection = new ActivitySelection();
+            //var activities = new List<Activity>
+            //{
+            //    new Activity
+            //    {
+            //        Start = 0,
+            //        End = 6
+            //    },
+            //    new Activity
+            //    {
+            //        Start = 3,
+            //        End = 4
+            //    },
+            //    new Activity
+            //    {
+            //        Start = 1,
+            //        End = 2
+            //    },
+            //    new Activity
+            //    {
+            //        Start = 5,
+            //        End = 8
+            //    },
+            //    new Activity
+            //    {
+            //        Start = 5,
+            //        End = 7
+            //    },
+            //    new Activity
+            //    {
+            //        Start = 8,
+            //        End = 9
+            //    }
+            //};
 
-            var list = activitySelection.SelectActivities(activities);
-            foreach(var item in list)
-            {
-                Console.WriteLine($"Start: {item.Start}, End: {item.End}");
-            }
+            //var list = activitySelection.SelectActivities(activities);
+            //foreach(var item in list)
+            //{
+            //    Console.WriteLine($"Start: {item.Start}, End: {item.End}");
+            //}
+
+            var coinChangeProblem = new CoinChangeProblem();
+            var count = coinChangeProblem.CalculateMinChange(new int[] { 1, 2, 5, 10, 20, 50, 100, 500, 1000 }, 121);
+            Console.WriteLine(count);
 
 
         }
