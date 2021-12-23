@@ -233,10 +233,33 @@ namespace DSA
             //    Console.WriteLine($"Start: {item.Start}, End: {item.End}");
             //}
 
-            var coinChangeProblem = new CoinChangeProblem();
-            var count = coinChangeProblem.CalculateMinChange(new int[] { 1, 2, 5, 10, 20, 50, 100, 500, 1000 }, 121);
-            Console.WriteLine(count);
+            //var coinChangeProblem = new CoinChangeProblem();
+            //var count = coinChangeProblem.CalculateMinChange(new int[] { 1, 2, 5, 10, 20, 50, 100, 500, 1000 }, 121);
+            //Console.WriteLine(count);
 
+            var fks = new FractionalKnapSack();
+            var items = new List<Item>()
+            {
+                new Item
+                {
+                    Weight = 20,
+                    Value = 100
+                },
+                new Item
+                {
+                    Weight = 30,
+                    Value = 120
+                },
+                new Item
+                {
+                    Weight = 10,
+                    Value = 60
+                }
+            };
+
+            var total = fks.Calculate(items, 29);
+
+            Console.WriteLine(total);
 
         }
     }
