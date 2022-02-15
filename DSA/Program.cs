@@ -1,8 +1,11 @@
-﻿using DSA.LinkedList.CSLL;
+﻿using DSA.Graph;
+using DSA.LinkedList.CSLL;
 using DSA.LinkedList.SLL;
 using DSA.Practice.ArrayStrings;
+using DSA.Practice.DivideAndConquer;
 using DSA.Practice.GreedyAlgorithm;
 using DSA.Practice.LinkedList;
+using DSA.Practice.Recursion;
 using DSA.Tree;
 using DSA.Tree.BinaryTree.LinkedList;
 using System;
@@ -237,29 +240,124 @@ namespace DSA
             //var count = coinChangeProblem.CalculateMinChange(new int[] { 1, 2, 5, 10, 20, 50, 100, 500, 1000 }, 121);
             //Console.WriteLine(count);
 
-            var fks = new FractionalKnapSack();
-            var items = new List<Item>()
-            {
-                new Item
-                {
-                    Weight = 20,
-                    Value = 100
-                },
-                new Item
-                {
-                    Weight = 30,
-                    Value = 120
-                },
-                new Item
-                {
-                    Weight = 10,
-                    Value = 60
-                }
-            };
+            //var fks = new FractionalKnapSack();
+            //var items = new List<Item>()
+            //{
+            //    new Item
+            //    {
+            //        Weight = 20,
+            //        Value = 100
+            //    },
+            //    new Item
+            //    {
+            //        Weight = 30,
+            //        Value = 120
+            //    },
+            //    new Item
+            //    {
+            //        Weight = 10,
+            //        Value = 60
+            //    }
+            //};
 
-            var total = fks.Calculate(items, 29);
+            //var total = fks.Calculate(items, 29);
 
-            Console.WriteLine(total);
+            //Console.WriteLine(total);
+
+            //var nf = new NumberFactor();
+            //Console.WriteLine(nf.FactorsOfN(6));
+
+            //MergeKSortedLists mergeKSortedLists = new MergeKSortedLists();
+
+            //List<SingleNode<int>> nodes = new List<SingleNode<int>>();
+
+            //var node = new SingleNode<int>()
+            //{
+            //    Value = 1,
+            //    Next = new SingleNode<int>()
+            //    {
+            //        Value = 4,
+            //        Next = new SingleNode<int>()
+            //        {
+            //            Value = 5
+            //        }
+            //    }
+            //};
+
+
+            //nodes.Add(node);
+
+            //node = new SingleNode<int>()
+            //{
+            //    Value = 1,
+            //    Next = new SingleNode<int>()
+            //    {
+            //        Value = 3,
+            //        Next = new SingleNode<int>()
+            //        {
+            //            Value = 4
+            //        }
+            //    }
+            //};
+
+            //nodes.Add(node);
+
+            //node = new SingleNode<int>()
+            //{
+            //    Value = 2,
+            //    Next = new SingleNode<int>()
+            //    {
+            //        Value = 6
+            //    }
+            //};
+
+            //nodes.Add(node);
+
+            //var result = mergeKSortedLists.MergeKLists(nodes.ToArray());
+
+            //while(result != null)
+            //{
+            //    Console.Write(result.Value);
+            //    result = result.Next;
+            //}
+
+            //var sn = new SwapNodes();
+            //SingleNode<int> node = new SingleNode<int>();
+            //node.Value = 1;
+            //node.Next = new SingleNode<int>
+            //{
+            //    Value = 2,
+            //    Next = new SingleNode<int>
+            //    {
+            //        Value = 3,
+            //        Next = new SingleNode<int>
+            //        {
+            //            Value = 4,
+            //            Next = null
+            //        }
+            //    }
+            //};
+
+            //sn.SwapPairs(node);
+
+
+            //var arr = new int[3, 2];
+
+            DisjointQuickFind dsQF = new DisjointQuickFind(10);
+
+            dsQF.Union(1, 2);
+            dsQF.Union(2, 5);
+            dsQF.Union(5, 6);
+            dsQF.Union(6, 7);
+            dsQF.Union(3, 8);
+            dsQF.Union(8, 9);
+
+            Console.WriteLine(dsQF.Connected(1, 5));//true
+            Console.WriteLine(dsQF.Connected(5, 7));//true
+            Console.WriteLine(dsQF.Connected(4, 9));//false
+
+            dsQF.Union(9, 4);
+            Console.WriteLine(dsQF.Connected(4, 9));//true
 
         }
     }
