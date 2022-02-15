@@ -343,7 +343,7 @@ namespace DSA
 
             //var arr = new int[3, 2];
 
-            DisjointQuickFind dsQF = new DisjointQuickFind(10);
+            DisjointOptimized dsQF = new DisjointOptimized(10);
 
             dsQF.Union(1, 2);
             dsQF.Union(2, 5);
